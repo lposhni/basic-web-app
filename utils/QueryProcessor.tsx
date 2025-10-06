@@ -11,5 +11,11 @@ export default function QueryProcessor(query: string): string {
     return "Rohan";
   }
 
+  if (query.includes("andrew id")) {
+    return "lposhni";
+  }
+
   return "";
 }
+
+
