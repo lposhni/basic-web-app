@@ -15,6 +15,26 @@ export default function QueryProcessor(query: string): string {
     return "lposhni";
   }
 
+    if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers && numbers.length >= 2) {
+      const nums = numbers.map(num => parseInt(num));
+      const largest = Math.max(...nums);
+      return largest.toString();
+    }
+  }
+
+  // Handle addition queries
+  if (query.toLowerCase().includes("plus") || query.includes("+")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers && numbers.length >= 2) {
+      const num1 = parseInt(numbers[0]);
+      const num2 = parseInt(numbers[1]);
+      const sum = num1 + num2;
+      return sum.toString();
+    }
+  }
+  
   return "";
 }
 

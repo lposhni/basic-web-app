@@ -33,5 +33,33 @@ describe("QueryProcessor", () => {
             "lposhni"
           ));
     });
+
+
+    test('What number is the largest', () => {
+        const query = "What number is the largest?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("");
+    });
+
+    test('What number is the largest', () => {
+    const query = "What number is the largest?";
+    const response: string = QueryProcessor(query);
+    expect(response).toBe("");
+    });
+
+    // Add these new tests
+    test('should return largest number from three numbers', () => {
+        const query = "Which of the following numbers is the largest: 45, 16, 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("45");
+    });
+
+    test('should handle addition', () => {
+        const query = "What is 47 plus 79?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("126");
+    });
+
+
     
 });
